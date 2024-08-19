@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::page_head('Brands - TechShopAdmin','none')">
+</head>
+<body>
+<div class="container-fluid">
+    <div th:replace="navigation::menu"></div>
+
+    <div>
+        <h1>Manage brands</h1>
+        <a th:href="@{/brands/new}" class="mr-2"><i class="fa-solid fa-folder-plus fa-2x icon-dark"></i></a>
+        <a th:href="@{/brands/export/csv}" class="mr-2"><i class="fa-solid fa-file-csv fa-2x icon-dark"></i></a>
+    </div>
+
+    <div th:replace="fragments::search_fragment_and_message"></div>
+
+    <div class="full-details">
+        <table class="table table-bordered table-striped table-hover table-responsive-xl">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col" class="hideable-column">Brand ID</th>
+                <th scope="col">Logo</th>
+<!--                <th scope="col">Brand Name</th>-->
+                <th th:replace="fragments::column_link('name', 'Brand Name','none')"></th>
+                <th scope="col">Categories</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="brand : ${listBrands}">
+                <td class="hideable-column" th:utext="${brand.id}"></td>
+                <td class="text-center">
+                    <!--                    <span th:if="${category.image==null}" class="fa-solid fa-image-portrait fa-3x icon-silver"></span>-->
+                    <img th:if="${brand.logo!=null}" th:src="@{${brand.logoPath}}" style="width: 100px">
+                </td>
+                <td th:utext="${brand.name}">Mark</td>
+                <td>
+                    <th:block th:each="category:${brand.categories}">
+                        <span class="badge badge-secondary" th:utext="${category.name}"></span>
+                    </th:block>
+                </td>
+
+                <td>
+                    <div th:replace="fragments::edit('brand','/brands/edit/' + ${brand.id})"></div>
+                    <div th:replace="fragments::delete('brand',${brand.id},'/brands/delete/' + ${brand.id}, true)"></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="less-details">
+        <div th:each="brand : ${listBrands}" class="row m-1">
+            <div class="col-6">
+                <span th:if="${brand.logo==null}" class="fa-solid fa-image-portrait fa-3x icon-silver"></span>
+                <img th:if="${brand.logo!=null}" th:src="@{${brand.logoPath}}" style="width: 100px">
+            </div>
+            <div class="col-6">
+                <div th:utext="${brand.name}"></div>
+                <div class="mt-2">
+<!--                    <div th:replace="fragments::status(${brand.enabled},'category','/categories/'+${category.id})"></div>-->
+
+                    <div th:replace="fragments::edit('brand','/brands/edit/' + ${brand.id})"></div>
+                    <div th:replace="fragments::delete('brand',${brand.id},'/brands/delete/' + ${brand.id},true)"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <th:block >
+        <div th:replace="fragments::pagination('brands')"></div>
+    </th:block>
+
+    <div th:replace="modal_fragments::confirm_modal"></div>
+
+    <div th:replace="fragments::footer"></div>
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+<script>
+    moduleURL = "[[@{/brands}]]";
+
+    $(document).ready(function () {
+        $(".link-delete").on("click", function (e) {
+            e.preventDefault();
+            showDeleteConfirmModal($(this), 'brand');
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="page_head(title,remove)" th:remove="${remove}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+    <title th:utext="${title}">Tech-Shop control panel</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/font-awesome/css/all.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+
+</head>
+<body>
+<div>
+    <div th:fragment="footer" class="text-center m-3">
+        <p>Tech-Shop control panel - Copyright &copy; Tech-Shop</p>
+    </div>
+
+    <th th:fragment="column_link(fieldName, columnLabel,removeTag)" scope="col" th:remove="${removeTag}">
+        <a class="text-white"
+           th:href="@{${moduleURL}+'/page/'+ ${currentPage} + '?sortField='+${fieldName}+
+       '&sortDir=' + ${reverseSortDir}+ ${keyword!=null ? ('&keyword='+keyword) : ''} +${categoryId!=null ? '&categoryId='+categoryId : ''}}" th:utext="${columnLabel}">User
+            ID</a>
+        <span th:if="${sortField==fieldName}"
+              th:class="${sortDir=='asc'? 'fa-solid fa-sort-up':'fa-solid fa-sort-down'}"></span>
+    </th>
+
+    <a th:fragment="page_link(pageNum, label)" class="page-link"
+       th:href="@{${moduleURL}+'/page/'+${pageNum} + '?sortField=' +${sortField}+'&sortDir='+${sortDir} +
+    ${keyword!=null ? ('&keyword='+keyword) : ''} + ${categoryId!=null ? '&categoryId='+categoryId : ''} }" th:utext="${label}">First</a>
+
+
+    <th:block th:fragment="status(enabled,entityName,entytyURL)" th:remove="tag">
+        <a th:attr="class=${enabled==true?'fa-solid fa-circle-check fa-2x icon-green':'fa-regular fa-circle fa-2x icon-green'}"
+           th:href="@{${entytyURL}+'/enabled/'+${enabled==true?'false':'true'}}"
+           th:title="${enabled==true?'Disable this '+ entityName:'Enable this ' +entityName}"
+           style="text-decoration: none">
+        </a>
+    </th:block>
+
+    <!--    <div th:fragment="category_status(enabled,entityName,entytyURL)" th:remove="tag">-->
+    <!--        <a th:attr="class=${category.enabled==true?'fa-solid fa-circle-check fa-2x icon-green':'fa-regular fa-circle fa-2x icon-green'}"-->
+    <!--           th:href="@{'/categories/'+${category.id}+'/enabled/'+${category.isEnabled()==true?'false':'true'}}"-->
+    <!--           th:title="${category.isEnabled()==true?'Disable this user':'Enable this user'}"-->
+    <!--           style="text-decoration: none">-->
+    <!--        </a>-->
+    <!--    </div>-->
+
+
+    <th:block th:fragment="edit(entityName,editURL)" th:remove="tag">
+        <a class="fa-solid fa-pen-to-square fa-2x icon-green"
+           th:href="@{${editURL}}"
+           th:title="'Edit this ' + ${entityName}"
+           style="text-decoration: none"></a>
+    </th:block>
+
+    <th:block th:fragment="delete(entityName,entityId,deleteURL,visible)">
+        <th:block th:if="${visible}">
+            <a class="fa-solid fa-trash fa-2x icon-dark link-delete"
+               th:href="@{${deleteURL}}"
+               th:entityId="${entityId}"
+               th:title="'Delete this ' + ${entityName}"
+               style="text-decoration: none"></a>
+        </th:block>
+    </th:block>
+
+<!--    <th:block th:if="${category.hasChildren==false}">-->
+<!--        <a class="fa-solid fa-trash fa-2x icon-dark link-delete"-->
+<!--           th:href="@{'/categories/delete/' + ${category.id}}"-->
+<!--           th:entityId="${category.id}"-->
+<!--           title="Delete this category"-->
+<!--           style="text-decoration: none"></a>-->
+<!--    </th:block>-->
+
+
+    <!--region pagination-->
+    <div th:fragment="pagination(entityName)" th:remove="tag">
+        <div th:if="${totalItems>0}" class="text-center m-1">
+            <span>Showing [[${entityName}]] # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
+        </div>
+        <div th:unless="${totalItems>0}" class="text-center m-1">
+            <span>No [[${entityName}]] found</span>
+        </div>
+        <nav th:if="${totalPage>1}">
+            <ul class="pagination justify-content-center flex-wrap">
+                <li class="page-item" th:classappend="${currentPage==1 ? 'disabled': '' }">
+                    <a th:replace="fragments::page_link(1, First)"></a>
+                </li>
+                <li class="page-item" th:classappend="${currentPage==1 ? 'disabled': '' }">
+                    <a th:replace="fragments::page_link(${currentPage - 1}, Previous)"></a>
+                </li>
+                <li class="page-item" th:classappend="${currentPage==i ? 'active': '' }"
+                    th:each="i:${#numbers.sequence(1, totalPage)}">
+                    <a th:replace="fragments::page_link(${i}, ${i})"></a>
+                </li>
+                <li class="page-item" th:classappend="${currentPage==totalPage ? 'disabled': '' }">
+                    <a th:replace="fragments::page_link(${currentPage + 1}, Next)"></a>
+                </li>
+                <li class="page-item" th:classappend="${currentPage==totalPage ? 'disabled': '' }">
+                    <a th:replace="fragments::page_link(${totalPage}, Last)"></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--endregion-->
+
+    <div th:fragment="search_fragment_and_message">
+        <form class="form-inline my-2" th:action="@{${moduleURL}+'/page/1'}">
+            <input type="hidden" name="sortDir" th:value="${sortDir}">
+            <input type="hidden" name="sortField" th:value="${sortField}">
+            <input class="form-control " type="search" placeholder="Search" aria-label="Search" th:value="${keyword}"
+                   name="keyword">
+            <button class="btn btn-outline-primary ml-2 " type="submit" >
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="btn btn-outline-secondary ml-2 " type="button" value="Clear" onclick="clearFilter()">
+                <i class="fa-solid fa-eraser"></i>
+            </button>
+        </form>
+
+        <div class="alert alert-success text-center" th:if="${message!=null}" th:utext="${message}">
+        </div>
+    </div>
+
+    <div th:fragment="format_currency(amount)" th:remove="tag">
+        <span th:if="${CURRENCY_SYMBOL_POSITION=='Before price'}" th:remove="tag" th:utext="${CURRENCY_SYMBOL+ #numbers.formatDecimal(amount,1,THOUSANDS_POINT_TYPE,DECIMAL_DIGITS,DECIMAL_POINT_TYPE)}"></span>
+        <span th:if="${CURRENCY_SYMBOL_POSITION=='After price'}" th:remove="tag" th:utext="${#numbers.formatDecimal(amount,1,THOUSANDS_POINT_TYPE,DECIMAL_DIGITS,DECIMAL_POINT_TYPE) + CURRENCY_SYMBOL}"></span>
+    </div>
+
+
+    <div th:fragment="format_time(dateTime)" th:remove="tag">
+        <span th:text="${#dates.format(dateTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
+    </div>
+
+    <div th:fragment="currency_input(amount)" th:remove="tag">
+        <input type="text" class="form-control" readonly  th:value="${(CURRENCY_SYMBOL_POSITION=='Before price'? CURRENCY_SYMBOL:'')+#numbers.formatDecimal(amount,1,THOUSANDS_POINT_TYPE,DECIMAL_DIGITS,DECIMAL_POINT_TYPE)+(CURRENCY_SYMBOL_POSITION=='After price'? CURRENCY_SYMBOL:'')}">
+    </div>
+
+
+</div>
+</body>
+</html>

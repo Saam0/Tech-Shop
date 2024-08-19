@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::page_head('Orders Tech-Shop','none')">
+</head>
+<body>
+<div class="container-fluid">
+    <div th:replace="navigation::menu"></div>
+
+    <div>
+        <h2>Manage Orders</h2>
+    </div>
+
+    <div th:replace="fragments::search_fragment_and_message"></div>
+
+    <div class="full-details">
+        <table class="table table-bordered table-striped table-hover table-responsive-xl">
+            <thead class="thead-dark">
+            <tr>
+                <th th:replace="fragments::column_link('id', 'ID', 'none')"></th>
+                <th th:replace="fragments::column_link('customer', 'Customer','none')"></th>
+                <th th:replace="fragments::column_link('total', 'Total','none')"></th>
+                <th th:replace="fragments::column_link('orderTime', 'Order Time','none')"></th>
+                <th class="hideable-column">
+                <th  th:replace="fragments::column_link('destination', 'Destination','tag')"></th>
+                </th>
+                <th class="hideable-column">
+                <th th:replace="fragments::column_link('paymentMethod', 'Payment Method','tag')"></th>
+                </th>
+                <th class="hideable-column">
+                <th th:replace="fragments::column_link('status', 'Status','tag')"></th>
+                </th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="order : ${listOrders}">
+
+                <td th:utext="${order.id}">Id</td>
+                <td >
+                    <a class="linkCustomerDetail" th:href="@{'/customers/detail/'+${order.customer.id}}"
+                       th:utext="${order.customer.fullName}">Customer</a>
+                </td>
+                <td >
+                    <div th:replace="fragments::format_currency(${order.total})"></div>
+                </td>
+                <td >
+                    <div th:replace="fragments::format_time(${order.orderTime})"></div>
+                </td>
+
+                <td class="hideable-column" th:utext="${order.destination}"></td>
+                <td class="hideable-column" th:utext="${order.paymentMethod}"></td>
+                <td class="hideable-column" th:utext="${order.status}"></td>
+
+                <td class="text-center">
+                    <a class="fas fa-file-alt fa-2x icon-green link-detail linkOrderDetail"
+                       th:href="@{'/order/detail/'+${order.id}}"
+                       title="View details of this order">
+                    </a>
+                    <div th:replace="fragments::edit('order','/orders/edit/' + ${order.id})"></div>
+                    <div th:replace="fragments::delete('order',${order.id},'/orders/delete/' + ${order.id},true)"></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="less-details">
+        <div th:each="order : ${listOrders}" class="row m-1">
+            <div class="col-2">
+                <span th:utext="${order.id}"></span>
+            </div>
+            <div class="col-10">
+                <div >
+                    <span th:utext="${order.customer.fullName+', '+ order.country}"></span>
+                </div>
+                <div >
+                    <small th:utext="${order.orderTime+' - '+ order.status}"></small>
+                </div>
+                <div>
+                    <div th:replace="fragments::format_currency(${order.total})"></div><span th:utext="${' - '+ order.paymentMethod}"></span>
+                </div>
+                <div>
+                    <a class="fas fa-file-alt fa-2x icon-green link-detail linkOrderDetail"
+                       th:href="@{'/order/detail/'+${order.id}}"
+                       title="View details of this order">
+                    </a>
+                    <div th:replace="fragments::edit('order','/orders/edit/' + ${order.id})"></div>
+                    <div th:replace="fragments::delete('order',${order.id},'/orders/delete/' + ${order.id},true)"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div th:replace="fragments::pagination('orders')"></div>
+
+    <div th:replace="modal_fragments::confirm_modal"></div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="fragments::footer"></div>
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+<script>
+
+    moduleURL = "[[@{/orders}]]";
+
+
+
+    $(document).ready(function () {
+        handleLinkVewCustomerDetail();
+        handleLinkVewOrderDetail()
+        handleLinkDeleteOrder()
+
+    })
+
+    function handleLinkDeleteOrder() {
+        $('.link-delete').click(function (event) {
+            event.preventDefault();
+            showDeleteConfirmModal($(this), 'order')
+        })
+    }
+    function handleLinkVewCustomerDetail() {
+        $('.linkCustomerDetail').click(function (event) {
+            event.preventDefault();
+            let linkDetailURL = $(this).attr('href');
+            $('#detailModal').modal('show').find('.modal-content').load(linkDetailURL);
+        })
+    }
+
+    function handleLinkVewOrderDetail() {
+        $('.linkOrderDetail').click(function (event) {
+            event.preventDefault();
+            let linkDetailURL = $(this).attr('href');
+            $('#detailModal').modal('show').find('.modal-content').load(linkDetailURL);
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+2022-12-29 23:50:30.457  INFO 25132 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-29 23:50:30.457  INFO 25132 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-29 23:50:30.473  INFO 25132 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-29 23:50:35.146  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 18.0.1.1 on Samvel with PID 16376 (C:\Users\samve\My_files\Proekts_02\TechShopProject\TechShopWebParent\TechShopBackEnd\target\classes started by samve in C:\Users\samve\My_files\Proekts_02\TechShopProject)
+2022-12-29 23:50:35.146  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-12-29 23:50:35.204  INFO 16376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-29 23:50:35.204  INFO 16376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-29 23:50:35.928  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-29 23:50:35.977  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2022-12-29 23:50:36.593  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-29 23:50:36.601  INFO 16376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-29 23:50:36.601  INFO 16376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-12-29 23:50:36.674  INFO 16376 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Initializing Spring embedded WebApplicationContext
+2022-12-29 23:50:36.674  INFO 16376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1470 ms
+2022-12-29 23:50:36.854  INFO 16376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-29 23:50:36.887  INFO 16376 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-12-29 23:50:36.968  INFO 16376 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-29 23:50:37.034  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-29 23:50:37.247  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-29 23:50:37.263  INFO 16376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-29 23:50:37.785  INFO 16376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-29 23:50:37.793  INFO 16376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-29 23:50:37.842  WARN 16376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-29 23:50:38.258  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-29 23:50:38.258  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2022-12-29 23:50:38.258  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-29 23:50:38.258  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2022-12-29 23:50:38.258  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-29 23:50:38.258  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2022-12-29 23:50:38.290  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-12-29 23:50:38.452  INFO 16376 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-29 23:50:38.994  INFO 16376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-29 23:50:39.042  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/TechShopAdmin'
+2022-12-29 23:50:39.058  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 4.363 seconds (JVM running for 5.059)
+2022-12-28 23:54:16.023  INFO 16376 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:54:16.028  INFO 16376 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-28 23:54:16.048  INFO 16376 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-28 23:54:16.237  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 18.0.1.1 on Samvel with PID 16376 (C:\Users\samve\My_files\Proekts_02\TechShopProject\TechShopWebParent\TechShopBackEnd\target\classes started by samve in C:\Users\samve\My_files\Proekts_02\TechShopProject)
+2022-12-28 23:54:16.237  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-12-28 23:54:16.689  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-28 23:54:16.720  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2022-12-28 23:54:16.913  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-28 23:54:16.913  INFO 16376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-28 23:54:16.913  INFO 16376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-12-28 23:54:16.958  INFO 16376 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Initializing Spring embedded WebApplicationContext
+2022-12-28 23:54:16.958  INFO 16376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 715 ms
+2022-12-28 23:54:17.042  INFO 16376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-28 23:54:17.051  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-12-28 23:54:17.081  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-12-28 23:54:17.081  INFO 16376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-28 23:54:17.175  INFO 16376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-28 23:54:17.175  INFO 16376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:54:17.222  WARN 16376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28 23:54:17.443  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:54:17.443  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2022-12-28 23:54:17.443  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:54:17.443  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2022-12-28 23:54:17.443  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:54:17.443  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2022-12-28 23:54:17.473  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-12-28 23:54:17.594  INFO 16376 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-28 23:54:18.113  INFO 16376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-28 23:54:18.149  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/TechShopAdmin'
+2022-12-28 23:54:18.160  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 2.012 seconds (JVM running for 219.707)
+2022-12-28 23:54:18.165  INFO 16376 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-28 23:55:26.442  INFO 16376 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:55:26.442  INFO 16376 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-12-28 23:55:26.452  INFO 16376 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-12-28 23:55:26.572  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 18.0.1.1 on Samvel with PID 16376 (C:\Users\samve\My_files\Proekts_02\TechShopProject\TechShopWebParent\TechShopBackEnd\target\classes started by samve in C:\Users\samve\My_files\Proekts_02\TechShopProject)
+2022-12-28 23:55:26.572  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-12-28 23:55:27.014  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-28 23:55:27.041  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 2 JPA repository interfaces.
+2022-12-28 23:55:27.268  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-28 23:55:27.268  INFO 16376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-28 23:55:27.268  INFO 16376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-12-28 23:55:27.313  INFO 16376 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Initializing Spring embedded WebApplicationContext
+2022-12-28 23:55:27.313  INFO 16376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 731 ms
+2022-12-28 23:55:27.402  INFO 16376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-28 23:55:27.417  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-12-28 23:55:27.452  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-12-28 23:55:27.452  INFO 16376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-28 23:55:27.568  INFO 16376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-28 23:55:27.568  INFO 16376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:55:27.622  WARN 16376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28 23:55:27.867  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:55:27.867  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2022-12-28 23:55:27.867  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:55:27.872  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2022-12-28 23:55:27.872  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:55:27.872  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2022-12-28 23:55:27.882  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-12-28 23:55:27.982  INFO 16376 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-28 23:55:28.453  INFO 16376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-28 23:55:28.477  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/TechShopAdmin'
+2022-12-28 23:55:28.487  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.962 seconds (JVM running for 290.031)
+2022-12-28 23:55:28.487  INFO 16376 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-28 23:57:17.115  INFO 16376 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:57:17.115  INFO 16376 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2022-12-28 23:57:17.115  INFO 16376 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2022-12-28 23:57:17.178  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 18.0.1.1 on Samvel with PID 16376 (C:\Users\samve\My_files\Proekts_02\TechShopProject\TechShopWebParent\TechShopBackEnd\target\classes started by samve in C:\Users\samve\My_files\Proekts_02\TechShopProject)
+2022-12-28 23:57:17.178  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-12-28 23:57:17.340  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-28 23:57:17.358  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 2 JPA repository interfaces.
+2022-12-28 23:57:17.421  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-28 23:57:17.421  INFO 16376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-28 23:57:17.432  INFO 16376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-12-28 23:57:17.432  INFO 16376 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Initializing Spring embedded WebApplicationContext
+2022-12-28 23:57:17.432  INFO 16376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 254 ms
+2022-12-28 23:57:17.464  INFO 16376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-28 23:57:17.464  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2022-12-28 23:57:17.480  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2022-12-28 23:57:17.480  INFO 16376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-28 23:57:17.527  INFO 16376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-28 23:57:17.527  INFO 16376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:57:17.543  WARN 16376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28 23:57:17.623  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:17.623  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2022-12-28 23:57:17.623  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:17.623  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2022-12-28 23:57:17.623  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:17.623  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2022-12-28 23:57:17.638  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-12-28 23:57:17.670  INFO 16376 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-28 23:57:17.845  INFO 16376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-28 23:57:17.861  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/TechShopAdmin'
+2022-12-28 23:57:17.861  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 0.701 seconds (JVM running for 399.41)
+2022-12-28 23:57:17.861  INFO 16376 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-28 23:57:19.293  INFO 16376 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:57:19.293  INFO 16376 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2022-12-28 23:57:19.293  INFO 16376 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2022-12-28 23:57:19.340  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 18.0.1.1 on Samvel with PID 16376 (C:\Users\samve\My_files\Proekts_02\TechShopProject\TechShopWebParent\TechShopBackEnd\target\classes started by samve in C:\Users\samve\My_files\Proekts_02\TechShopProject)
+2022-12-28 23:57:19.340  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-12-28 23:57:19.497  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-28 23:57:19.512  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 2 JPA repository interfaces.
+2022-12-28 23:57:19.576  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-28 23:57:19.576  INFO 16376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-28 23:57:19.576  INFO 16376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-12-28 23:57:19.592  INFO 16376 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Initializing Spring embedded WebApplicationContext
+2022-12-28 23:57:19.592  INFO 16376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 236 ms
+2022-12-28 23:57:19.624  INFO 16376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-28 23:57:19.639  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2022-12-28 23:57:19.661  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2022-12-28 23:57:19.661  INFO 16376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-28 23:57:19.687  INFO 16376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-28 23:57:19.702  INFO 16376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:57:19.718  WARN 16376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28 23:57:19.798  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:19.798  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2022-12-28 23:57:19.798  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:19.798  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2022-12-28 23:57:19.798  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:19.798  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2022-12-28 23:57:19.798  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-12-28 23:57:19.829  INFO 16376 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-28 23:57:20.035  INFO 16376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-28 23:57:20.051  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/TechShopAdmin'
+2022-12-28 23:57:20.061  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 0.728 seconds (JVM running for 401.607)
+2022-12-28 23:57:20.061  INFO 16376 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-28 23:57:44.964  INFO 16376 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:57:44.964  INFO 16376 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2022-12-28 23:57:44.964  INFO 16376 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2022-12-28 23:57:45.025  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 18.0.1.1 on Samvel with PID 16376 (C:\Users\samve\My_files\Proekts_02\TechShopProject\TechShopWebParent\TechShopBackEnd\target\classes started by samve in C:\Users\samve\My_files\Proekts_02\TechShopProject)
+2022-12-28 23:57:45.025  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-12-28 23:57:45.218  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-28 23:57:45.234  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2022-12-28 23:57:45.298  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-28 23:57:45.298  INFO 16376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-28 23:57:45.298  INFO 16376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-12-28 23:57:45.313  INFO 16376 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Initializing Spring embedded WebApplicationContext
+2022-12-28 23:57:45.313  INFO 16376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 288 ms
+2022-12-28 23:57:45.346  INFO 16376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-28 23:57:45.346  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2022-12-28 23:57:45.361  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2022-12-28 23:57:45.361  INFO 16376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-28 23:57:45.393  INFO 16376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-28 23:57:45.393  INFO 16376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:57:45.408  WARN 16376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28 23:57:45.494  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:45.494  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2022-12-28 23:57:45.494  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:45.494  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2022-12-28 23:57:45.494  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:45.494  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2022-12-28 23:57:45.494  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-12-28 23:57:45.535  INFO 16376 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-28 23:57:45.726  INFO 16376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-28 23:57:45.742  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/TechShopAdmin'
+2022-12-28 23:57:45.742  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 0.738 seconds (JVM running for 427.291)
+2022-12-28 23:57:45.742  INFO 16376 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-28 23:57:47.183  INFO 16376 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:57:47.183  INFO 16376 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2022-12-28 23:57:47.183  INFO 16376 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2022-12-28 23:57:47.247  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 18.0.1.1 on Samvel with PID 16376 (C:\Users\samve\My_files\Proekts_02\TechShopProject\TechShopWebParent\TechShopBackEnd\target\classes started by samve in C:\Users\samve\My_files\Proekts_02\TechShopProject)
+2022-12-28 23:57:47.247  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-12-28 23:57:47.359  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-28 23:57:47.376  INFO 16376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 2 JPA repository interfaces.
+2022-12-28 23:57:47.439  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-28 23:57:47.439  INFO 16376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-28 23:57:47.439  INFO 16376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-12-28 23:57:47.454  INFO 16376 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Initializing Spring embedded WebApplicationContext
+2022-12-28 23:57:47.454  INFO 16376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 207 ms
+2022-12-28 23:57:47.494  INFO 16376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-28 23:57:47.501  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2022-12-28 23:57:47.523  INFO 16376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2022-12-28 23:57:47.523  INFO 16376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-28 23:57:47.549  INFO 16376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-28 23:57:47.549  INFO 16376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-28 23:57:47.565  WARN 16376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-28 23:57:47.628  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:47.628  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2022-12-28 23:57:47.628  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:47.628  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2022-12-28 23:57:47.628  WARN 16376 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-28 23:57:47.628  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2022-12-28 23:57:47.628  INFO 16376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-12-28 23:57:47.676  INFO 16376 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-28 23:57:47.849  INFO 16376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-28 23:57:47.865  INFO 16376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/TechShopAdmin'
+2022-12-28 23:57:47.865  INFO 16376 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 0.633 seconds (JVM running for 429.412)
+2022-12-28 23:57:47.865  INFO 16376 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-29 00:02:44.074  INFO 16376 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-29 00:02:44.074  INFO 16376 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2022-12-29 00:02:44.084  INFO 16376 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2022-12-29 00:02:48.630  INFO 2208 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 18.0.1.1 on Samvel with PID 2208 (C:\Users\samve\My_files\Proekts_02\TechShopProject\TechShopWebParent\TechShopBackEnd\target\classes started by samve in C:\Users\samve\My_files\Proekts_02\TechShopProject)
+2022-12-29 00:02:48.646  INFO 2208 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-12-29 00:02:48.668  INFO 2208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-29 00:02:48.668  INFO 2208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-29 00:02:49.176  INFO 2208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-29 00:02:49.224  INFO 2208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2022-12-29 00:02:49.667  INFO 2208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-29 00:02:49.683  INFO 2208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-29 00:02:49.683  INFO 2208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-12-29 00:02:49.731  INFO 2208 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Initializing Spring embedded WebApplicationContext
+2022-12-29 00:02:49.731  INFO 2208 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1063 ms
+2022-12-29 00:02:49.890  INFO 2208 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-29 00:02:49.921  INFO 2208 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-12-29 00:02:50.015  INFO 2208 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-29 00:02:50.078  INFO 2208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-29 00:02:50.292  INFO 2208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-29 00:02:50.306  INFO 2208 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-29 00:02:50.869  INFO 2208 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-29 00:02:50.873  INFO 2208 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-29 00:02:50.920  WARN 2208 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-29 00:02:51.313  WARN 2208 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-29 00:02:51.313  INFO 2208 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/images/**'] with []
+2022-12-29 00:02:51.313  WARN 2208 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-29 00:02:51.313  INFO 2208 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/js/**'] with []
+2022-12-29 00:02:51.313  WARN 2208 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2022-12-29 00:02:51.313  INFO 2208 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2022-12-29 00:02:51.329  INFO 2208 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-12-29 00:02:51.454  INFO 2208 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-12-29 00:02:51.841  INFO 2208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-29 00:02:51.872  INFO 2208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/TechShopAdmin'
+2022-12-29 00:02:51.888  INFO 2208 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 3.527 seconds (JVM running for 4.077)
+2022-12-29 00:02:58.046  INFO 2208 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/TechShopAdmin]           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-29 00:02:58.046  INFO 2208 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-29 00:02:58.046  INFO 2208 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-12-29 00:03:55.887 ERROR 2208 --- [http-nio-8080-exec-6] com.techshop.admin.FileUploadUtil        : Could not list directory: user-photos\27
+2022-12-29 00:08:43.022  INFO 2208 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-29 00:08:43.027  INFO 2208 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-29 00:08:43.038  INFO 2208 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

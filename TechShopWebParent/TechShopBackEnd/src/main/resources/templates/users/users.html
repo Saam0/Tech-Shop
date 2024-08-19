@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::page_head('Users Admin','none')">
+</head>
+<body>
+<div class="container-fluid">
+    <div th:replace="navigation::menu"></div>
+
+    <div>
+        <h1>Manage users</h1>
+        <a th:href="@{/users/new}" class="mr-2"><i class="fa-solid fa-user-plus fa-2x icon-dark"></i></a>
+        <a th:href="@{/users/export/csv}" class="mr-2"><i class="fa-solid fa-file-csv fa-2x icon-dark"></i></a>
+        <a th:href="@{/users/export/excel}" class="mr-2"><i class="fa-sharp fa-solid fa-file-excel fa-2x icon-dark"></i></a>
+        <a th:href="@{/users/export/pdf}"><i class="fa-solid fa-file-pdf fa-2x icon-dark"></i></a>
+    </div>
+
+    <div th:replace="fragments::search_fragment_and_message"></div>
+
+    <div class="full-details">
+        <table class="table table-bordered table-striped table-hover table-responsive-xl">
+            <thead class="thead-dark">
+            <tr>
+                <th class="hideable-column">
+                <th th:replace="fragments::column_link('id', 'User ID', 'tag')"></th>
+                </th>
+                <th scope="col">Photos</th>
+                <th class="hideable-column">
+                <th th:replace="fragments::column_link('email', 'E-mail','tag')"></th>
+                </th>
+                <th th:replace="fragments::column_link('firstName', 'First name','none')"></th>
+                <th th:replace="fragments::column_link('lastName', 'Last name','none')"></th>
+                <th th:replace="fragments::column_link('enabled', 'Enabled','none')"></th>
+                <th th:replace="fragments::column_link('roles', 'Roles','none')"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${listAllUsers}">
+                <td class="hideable-column" th:utext="${user.id}">Mark</td>
+                <!--                <td th:utext="${user.photos}">Mark</td>-->
+                <td class="text-center">
+                    <span th:if="${user.photos==null}" class="fa-solid fa-image-portrait fa-3x icon-silver"></span>
+                    <img th:if="${user.photos!=null}" th:src="@{${user.photosImagePath}}" style="width: 100px">
+                </td>
+                <td class="hideable-column" th:utext="${user.email}">Mark</td>
+                <td th:utext="${user.firstName}">Mark</td>
+                <td th:utext="${user.lastName}">Mark</td>
+                <td class="text-center">
+                    <div th:replace="fragments::status(${user.enabled},'user','/users/'+${user.id})"></div>
+                </td>
+                <td th:utext="${user.roles}">Mark</td>
+                <td class="text-center">
+                    <div th:replace="fragments::edit('user','/users/edit/' + ${user.id})"></div>
+                    <div th:replace="fragments::delete('user',${user.id},'/users/delete/' + ${user.id},true)"></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="less-details">
+        <div th:each="user : ${listAllUsers}" class="row m-1">
+            <div class="col-4">
+                <span th:if="${user.photos==null}" class="fa-solid fa-image-portrait fa-3x icon-silver"></span>
+                <img th:if="${user.photos!=null}" th:src="@{${user.photosImagePath}}" style="width: 100px">
+            </div>
+            <div class="col-8">
+                <div th:utext="${user.fullName}"></div>
+                <div th:utext="${user.roles}"></div>
+                <div class="mt-1">
+                    <div th:replace="fragments::status(${user.enabled},'user','/users/'+${user.id})"></div>
+
+                    <div th:replace="fragments::edit('user','/users/edit/' + ${user.id})"></div>
+                    <div th:replace="fragments::delete('user',${user.id},'/users/delete/' + ${user.id},true)"></div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div th:replace="fragments::pagination('users')"></div>
+
+    <!--    <div th:if="${totalItems>0}" class="text-center m-1">-->
+    <!--        <span>Showing user # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>-->
+    <!--    </div>-->
+    <!--    <div th:unless="${totalItems>0}" class="text-center m-1">-->
+    <!--        <span>No users found</span>-->
+    <!--    </div>-->
+    <!--    <nav th:if="${totalPage>1}">-->
+    <!--        <ul class="pagination justify-content-center flex-wrap">-->
+    <!--            <li class="page-item" th:classappend="${currentPage==1 ? 'disabled': '' }">-->
+    <!--                <a th:replace="fragments::page_link(1, First)"></a>-->
+    <!--            </li>-->
+    <!--            <li class="page-item" th:classappend="${currentPage==1 ? 'disabled': '' }">-->
+    <!--                <a th:replace="fragments::page_link(${currentPage - 1}, Previous)"></a>-->
+    <!--            </li>-->
+    <!--            <li class="page-item" th:classappend="${currentPage==i ? 'active': '' }"-->
+    <!--                th:each="i:${#numbers.sequence(1, totalPage)}">-->
+    <!--                <a th:replace="fragments::page_link(${i}, ${i})"></a>-->
+    <!--            </li>-->
+    <!--            <li class="page-item" th:classappend="${currentPage==totalPage ? 'disabled': '' }">-->
+    <!--                <a th:replace="fragments::page_link(${currentPage + 1}, Next)"></a>-->
+    <!--            </li>-->
+    <!--            <li class="page-item" th:classappend="${currentPage==totalPage ? 'disabled': '' }">-->
+    <!--                <a th:replace="fragments::page_link(${totalPage}, Last)"></a>-->
+    <!--            </li>-->
+    <!--        </ul>-->
+    <!--    </nav>-->
+
+
+    <div th:replace="modal_fragments::confirm_modal"></div>
+
+
+    <div th:replace="fragments::footer"></div>
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+<script>
+
+    moduleURL = "[[@{/users}]]";
+
+    $(document).ready(function () {
+        $(".link-delete").on("click", function (e) {
+            e.preventDefault();
+            showDeleteConfirmModal($(this), 'user');
+        })
+    })
+</script>
+</body>
+</html>

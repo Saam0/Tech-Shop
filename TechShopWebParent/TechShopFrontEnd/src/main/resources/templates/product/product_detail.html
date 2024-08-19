@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="fragments::page_head(${pageTitle},'none')">
+    <meta charset="UTF-8">
+    <title>Tech-Shop</title>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div th:replace="navigation::header_menu"></div>
+
+    <div th:replace="breadcrumb::content"></div>
+    <div th:replace="navigation::search_nav"></div>
+
+
+    <div class="row">
+        <div class="col-sm">
+            <div>
+                <img id="big-image" th:src="@{${product.mainImagePath}}" class="img-fluid" index="0">
+            </div>
+            <div class="row justify-content-center">
+                <div class="m-2 border border-secondary p-1">
+                    <img class="image-thumbnail" th:src="@{${product.mainImagePath}}" width="50px">
+                </div>
+                <th:block th:each="image, status:${product.productImages}">
+                    <div class="m-2 border border-secondary p-1">
+                        <img th:index="${status.index+1}" class="image-thumbnail" th:src="@{${image.imagePath}}"
+                             width="50px">
+                    </div>
+                </th:block>
+            </div>
+        </div>
+
+        <div class="col-sm">
+            <div>
+                <h2 th:utext="${product.name}"></h2>
+            </div>
+            <div>
+                <span th:utext="'Brend: '+${product.brand.name}"></span>
+            </div>
+
+            <div>
+                <p>List price:
+                    <span th:if="${product.getDiscountPercent()<=0}"><span th:replace="product/product_fragment::price_fragment(${product.price})"></span></span>
+                    <del th:if="${product.getDiscountPercent()>0}"><span th:replace="product/product_fragment::price_fragment(${product.price})"></span></del>
+                </p>
+
+            </div>
+            <div th:if="${product.getDiscountPercent()>0}">
+                <p>Price: <span style="color: darkred; font-size: larger"><span th:replace="product/product_fragment::price_fragment(${product.discountPrice})"></span></span>
+                    <span th:utext="'('+${#numbers.formatDecimal(product.discountPercent,1,THOUSANDS_POINT_TYPE,DECIMAL_DIGITS,DECIMAL_POINT_TYPE)} + ' % off)'"></span></p>
+            </div>
+
+            <div>
+                <p th:utext="${product.shortDescription}"></p>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div>
+                <span th:if="${product.inStock}" class="text-success"><b>In stock</b></span>
+                <span th:unless="${product.inStock}" class="text-danger"><b>Out of stock</b></span>
+            </div>
+
+            <th:block th:if="${product.inStock}">
+                <div class="mt-3">
+<!--                    <input type="hidden" id="csrfToken" th:data-csrf-token="${_csrf.token}">-->
+<!--                    let csrfValue = document.getElementById("csrfToken").getAttribute("data-csrf-token")  // texadrel scripti mej;-->
+
+                    <div th:replace="cart/quantity_control::quantity_control(1,${product.id})"></div>
+                    <button type="button" id="buttonAdd2Cart" class="btn btn-primary">Add to cart</button>
+                </div>
+            </th:block>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div>
+                <hr/>
+            </div>
+            <h2>Product details</h2>
+            <p th:utext="${product.fullDescription}"></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div>
+                <hr/>
+            </div>
+            <h2>Product details</h2>
+            <th:block th:each="deteil:${product.productDetails}">
+                <p><b th:utext="${deteil.name}"></b> <span th:utext="${deteil.value}"></span></p>
+
+            </th:block>
+        </div>
+    </div>
+
+
+
+    <div th:replace="images_carusel::content"></div>
+
+    <div th:replace="fragments::modal_dialog"></div>
+
+    <div th:replace="navigation::footer_menu"></div>
+
+
+</div>
+
+<script>
+    contextPath ="[[@{/}]]";
+    productId = "[[${product.id}]]";
+    let csrfHeaderName = "[[${_csrf.headerName}]]";
+    let csrfValue = "[[${_csrf.token}]]";
+
+
+
+    $(document).ready(function () {
+        $('.image-thumbnail').mouseover(function () {
+            const src = $(this).attr('src');
+            const index = $(this).attr('index');
+            $('#big-image').attr('src', src);
+            $('#big-image').attr('index', index);
+        });
+
+        $('#big-image').on('click', function () {
+            $('#carouselModal').modal('show');
+            const imageIndex = $('#big-image').attr('index');
+            $('#carouselExampleIndicators').carousel(parseInt(imageIndex));
+        })
+    });
+</script>
+<script th:src="@{/js/common_modal.js}"></script>
+<script th:src="@{/js/quantity_control.js}"></script>
+<script th:src="@{/js/add_to_cart.js}"></script>
+</body>
+</html>

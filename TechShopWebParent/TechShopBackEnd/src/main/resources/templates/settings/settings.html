@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <head th:replace="fragments::page_head('Settings Tech-Sop Admin', tag)"></head>
+    <link rel="stylesheet" type="text/css" th:href="@{/richtext/richtext.min.css}"/>
+    <script type="text/javascript" th:src="@{/richtext/jquery.richtext.min.js}"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div th:replace="navigation::menu"></div>
+
+    <div>
+        <h1>Site settings</h1>
+    </div>
+    <div class="alert alert-success text-center" th:if="${message!=null}" th:utext="${message}">
+    </div>
+
+
+    <div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="settingTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-toggle="tab" data-target="#general" type="button" role="tab">
+                    General
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-toggle="tab" data-target="#countries" type="button" role="tab">
+                    Countries
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-toggle="tab" data-target="#states" type="button" role="tab">
+                    States
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-toggle="tab" data-target="#mailServer" type="button" role="tab">Mail
+                    Server
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-toggle="tab" data-target="#mailTemplates" type="button" role="tab">Mail
+                    templates
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-toggle="tab" data-target="#payment" type="button" role="tab">Payment
+                </button>
+            </li>
+
+
+
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active p-3" id="general" role="tabpanel">
+                <div th:replace="settings/general::content"></div>
+            </div>
+            <div class="tab-pane p-3" id="countries" role="tabpanel">
+                <div th:replace="settings/countries::content"></div>
+
+            </div>
+            <div class="tab-pane" id="states" role="tabpanel">
+                <div th:replace="settings/states::content"></div>
+
+            </div>
+            <div class="tab-pane p-3" id="mailServer" role="tabpanel">
+                <div th:replace="settings/mail_server::content"></div>
+            </div>
+
+            <div class="tab-pane p-3" id="mailTemplates" role="tabpanel">
+                <div th:replace="settings/mail_templates/mail_templates::content"></div>
+
+            </div>
+
+            <div class="tab-pane" id="payment" role="tabpanel">
+                <div th:replace="settings/payment::content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast d-flex justify-content-center" role="alert" aria-live="polite" aria-atomic="true"
+         data-delay="3000">
+        <div role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+                <span id="toastMessage"></span>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="fragments::footer"></div>
+
+</div>
+<script>
+    MAX_FILE_SIZE = 102400; //100 KB
+    const contextPath = "[[@{/}]]";
+    cstfHeaderName = "[[${_csrf.headerName}]]";
+    csrfValue = "[[${_csrf.token}]]";
+
+    $(document).ready(function () {
+        $("#customerVerificationContent").richText();
+        $("#orderConfirmationContent").richText({height: 400});
+    });
+</script>
+<script type="text/javascript" th:src="@{/js/common_form.js}"></script>
+<script type="text/javascript" th:src="@{/js/countries_setting.js}"></script>
+<script type="text/javascript" th:src="@{/js/states_setting.js}"></script>
+<script type="text/javascript" th:src="@{/js/common.js}"></script>
+
+
+
+</body>
+</html>
